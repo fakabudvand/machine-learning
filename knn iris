@@ -1,0 +1,26 @@
+from sklearn import datasets
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+iris=datasets.load_iris()
+iris.data
+iris.data.shape
+
+(150, 4)
+
+x=iris.data
+y=iris.target
+from sklearn.neighbors import KNeighborsClassifier
+knn=KNeighborsClassifier(n_neighbors=6, metric='minkowski',p=2)
+knn.fit(x,y)
+
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=6, p=2,
+           weights='uniform')
+
+xx=np.array([[5,3,1,0.2]])
+yy=knn.predict(xx)
+print(yy)
+
+[0]
+
